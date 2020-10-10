@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/music_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorDark"
+    android:padding="5dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="15dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="false">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_weight="8"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/music_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/song_title"
+                    android:textColor="@color/song_title_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/music_singer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="@string/song_singer"
+                    android:textColor="@color/song_artist" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/basin_image_play"
+                    style="@style/Widget.Neumorph.ImageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_play"
+                    android:tint="#7f8287"
+                    android:visibility="gone"
+                    app:neumorph_shadowColorDark="@color/shadowColorDark"
+                    app:neumorph_shadowColorLight="@color/shadowColorLight"
+                    app:neumorph_shapeType="flat" />
+
+                <soup.neumorphism.NeumorphImageButton
+                    android:id="@+id/basin_image_pause"
+                    style="@style/Widget.Neumorph.ImageButton"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_pause"
+                    android:tint="@color/colorWhite"
+                    app:neumorph_backgroundColor="@color/colorPrimary"
+                    app:neumorph_shadowColorDark="@color/shadowColorDark"
+                    app:neumorph_shadowColorLight="@color/shadowColorLight"
+                    app:neumorph_shapeType="flat" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

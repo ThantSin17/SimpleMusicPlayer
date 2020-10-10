@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ed4e0d</color>
+    <color name="colorPrimaryDark">#202328</color>
+    <color name="colorAccent">#d04c1e</color>
+
+    <color name="colorDark">#000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="shadowColorDark">#66000000</color>
+    <color name="shadowColorLight">#66494949</color>
+    <color name="song_title_color">#a4a7ac</color>
+    <color name="song_artist">#51545b</color>
+    <color name="background_dark">#202328</color>
+    <color name="seek_bar_background">#ababab</color>
+    <color name="seek_bar_progress">#ffb600</color>
+    <color name="seek_bar_secondary_progress">#3399CC</color>
+</resources>
