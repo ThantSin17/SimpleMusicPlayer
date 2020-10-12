@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
     </style>
     <style name="CustomShapeAppearance">
         <item name="neumorph_cornerFamily">rounded</item>
@@ -23,5 +24,13 @@
         <item name="neumorph_cornerSizeTopRight">150dp</item>
         <item name="neumorph_cornerSizeBottomLeft">150dp</item>
         <item name="neumorph_cornerSizeBottomRight">150dp</item>
+    </style>
+    <style name="PlayerImageView">
+        <item name="neumorph_cornerFamily">oval</item>
+        <item name="neumorph_cornerSize">20dp</item>
+        <item name="neumorph_cornerSizeTopLeft">10dp</item>
+        <item name="neumorph_cornerSizeTopRight">5dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">5dp</item>
+        <item name="neumorph_cornerSizeBottomRight">5dp</item>
     </style>
 </resources>

@@ -4,6 +4,10 @@
     <string name="song_singer">Song Singer</string>
     <string name="description">Description</string>
     <string name="playing_now">PLAYING NOW</string>
-    <string name="title">Title</string>
+
     <string name="_2_22">2:22</string>
+    <string name="playing_all_songs">Playing All Songs</string>
+    <string name="_165_songs">165 songs</string>
+    <string name="singer">Singer</string>
+    <string name="title">Title</string>
 </resources>

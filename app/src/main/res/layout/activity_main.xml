@@ -8,15 +8,123 @@
     android:background="@color/background_dark"
     tools:context=".activity.MainActivity">
 
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/title_layout"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp"
+    android:gravity="center_vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@string/playing_all_songs"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/songSize"
+            android:textColor="@color/colorWhite"
+            android:text="@string/_165_songs"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintTop_toBottomOf="@+id/title_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:clipToPadding="false"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/player_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/player_layout"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:weightSum="2"
+    android:visibility="visible"
+    android:background="#15171B"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/playerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:maxLines="1"
+            android:textSize="16sp"
+            android:textColor="@color/song_title_color"
+             />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/playerSinger"
+            android:text="@string/singer"
+            android:textColor="@color/song_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="match_parent">
+                <ImageView
+                    android:src="@drawable/ic_backward"
+                    android:id="@+id/playerBackward"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:tint="@color/colorWhite" />
+
+                <soup.neumorphism.NeumorphImageView
+                    android:id="@+id/playerPlayPause"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="centerInside"
+                    app:neumorph_backgroundColor="@color/colorPrimary"
+                    app:neumorph_shadowColorDark="@color/shadowColorDark"
+                    app:neumorph_shadowColorLight="@color/shadowColorLight"
+                    app:neumorph_shadowElevation="1dp"
+                    app:neumorph_shapeAppearance="@style/PlayerImageView"
+                    app:srcCompat="@drawable/ic_pause"
+                    app:tint="@color/colorWhite" />
+                <ImageView
+                    android:src="@drawable/ic_forward"
+                    android:id="@+id/playerForward"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:tint="@color/colorWhite" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

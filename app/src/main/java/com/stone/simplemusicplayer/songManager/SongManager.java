@@ -21,16 +21,19 @@ public class SongManager {
         mediaPlayer=MediaPlayer.create(context, Uri.parse(url));
         closeMusic.onCloseMusic(mediaPlayer);
     }
+    public static void createSongs(Context context, String url){
+        mediaPlayer=MediaPlayer.create(context, Uri.parse(url));
+        //closeMusic.onCloseMusic(mediaPlayer);
+    }
     public static void playSong(){
 
         //initializeSeekBar();
             mediaPlayer.start();
 
     }
-    public static void closeSong(Context context){
+    public static void closeSong(){
 
-        mediaPlayer.stop();
-        mediaPlayer.reset();
         mediaPlayer.release();
+        mediaPlayer=null;
     }
 }
