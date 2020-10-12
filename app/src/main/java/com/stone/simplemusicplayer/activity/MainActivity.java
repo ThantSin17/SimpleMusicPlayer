@@ -1,10 +1,9 @@
 package com.stone.simplemusicplayer.activity;
 
-import android.content.SharedPreferences;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-
 
 import com.stone.simplemusicplayer.R;
 import com.stone.simplemusicplayer.adapter.MusicAdapter;
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private boolean isPause=false;
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,32 +54,32 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             @Override
             public void onClick(View view) {
                 if (isPause){
-                    TestingPlayer.play();
+                    PlayerActivity.play();
                     binding.playerPlayPause.setImageResource(R.drawable.ic_pause);
                     isPause=false;
                 }else {
                     isPause=true;
                     binding.playerPlayPause.setImageResource(R.drawable.ic_play);
-                    TestingPlayer.pause();
+                    PlayerActivity.pause();
                 }
             }
         });
         binding.playerForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TestingPlayer.playNext(MainActivity.this);
+                PlayerActivity.playNext(MainActivity.this);
             }
         });
         binding.playerBackward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TestingPlayer.playBack(MainActivity.this);
+                PlayerActivity.playBack(MainActivity.this);
             }
         });
         binding.playerLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(TestingPlayer.gotoPlayerActivity(MainActivity.this,songInfo,mModel.getCurrentPosition(),MainActivity.this));
+                startActivity(PlayerActivity.gotoPlayerActivity(MainActivity.this,songInfo,mModel.getCurrentPosition(),MainActivity.this));
             }
         });
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     public void onItemClick(Song song, int position) {
         setupPlayer(position);
         mModel.setCurrentPosition(position);
-        startActivity(TestingPlayer.gotoPlayerActivity(this,songInfo,position,this));
+        startActivity(PlayerActivity.gotoPlayerActivity(this,songInfo,position,this));
     }
 
 
@@ -105,9 +105,9 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 //        if (preferences.getInt("curPos",-1)!=-1){
 //            adapter.setSelectedPosition(preferences.getInt("curPos",-1));
 //        }
-        if (TestingPlayer.isPlaying()!=-1){
-            adapter.setSelectedPosition(TestingPlayer.isPlaying());
-            setupPlayer(TestingPlayer.isPlaying());
+        if (PlayerActivity.isPlaying()!=-1){
+            adapter.setSelectedPosition(PlayerActivity.isPlaying());
+            setupPlayer(PlayerActivity.isPlaying());
         }else {
             binding.playerLayout.setVisibility(View.GONE);
         }

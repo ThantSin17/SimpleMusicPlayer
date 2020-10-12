@@ -68,10 +68,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicViewHol
         });
 
         if (selectedPosition == position) {
-            // notifyDataSetChanged();
-            Toast.makeText(context, "Song change" + selectedPosition, Toast.LENGTH_SHORT).show();
-            holder.binding.musicTitle.setText(songList.get(position).getTitle() + "playing now");
-            // holder.binding.basinImageView.setImageResource(R.drawable.ic_pause);
             holder.binding.basinImagePlay.setVisibility(View.GONE);
             holder.binding.basinImagePause.setVisibility(View.VISIBLE);
             holder.binding.musicCardView.setCardBackgroundColor(Color.parseColor("#66000000"));
